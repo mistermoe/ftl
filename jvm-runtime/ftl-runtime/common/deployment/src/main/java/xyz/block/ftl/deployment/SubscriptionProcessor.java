@@ -67,6 +67,8 @@ public class SubscriptionProcessor {
                             .setMinBackoff(retry.minBackoff());
                     builder.addMetadata(Metadata.newBuilder().setRetry(retryBuilder).build());
                 }
+
+                log.info("FromOffset value is: " + info.from());
             }));
         });
     }
